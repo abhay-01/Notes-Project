@@ -9,7 +9,7 @@ let notes = [];
 // Save Button is Clicked
 
 function addNotes() {
-    let notes = localStorage.getItem('notes');
+    let notes = localStorage.getItem('notes'); //getting notes from local storage
 
     if(notes === null){
         notes = [];
@@ -27,8 +27,8 @@ function addNotes() {
         text: addText.value,
     }
 
-    notes.push(noteObj);
-    localStorage.setItem('notes', JSON.stringify(notes));
+    notes.push(noteObj); //pushing note object in notes array
+    localStorage.setItem('notes', JSON.stringify(notes));  //setting notes in local storage
     showNotes();
 }
 
@@ -47,7 +47,7 @@ function showNotes() {
 
     for(let i = 0; i<notes.length; i++){
         html += ` <div class="note">
-                    <button class = "detente" id = ${i} onclick="detente(${i})" >Delete</button>
+                    <button class = "detente" id = ${i} onclick="detente(${i})" >Delete</button>  
                    <div class = "title">${notes[i].title}</div>
                    <div class = "text">${notes[i].text}</div>
              </div>
